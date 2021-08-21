@@ -1,0 +1,32 @@
+body {
+
+}
+
+section {
+  margin: 0px 397px 0px 397px;
+  border-style: solid;
+}
+
+button {
+  cursor: pointer;
+}
+
+.game-board-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.unselected,
+.checked {
+  height: 125px;
+  width: 125px;
+  border-style: solid;
+  background-color: #005AA8
+}
+
+.checked {
+  background-color: #86F8FE
+}
