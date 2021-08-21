@@ -1,7 +1,8 @@
 class Square {
-  constructor(position, gNum) {
+  constructor(position, group, surrSquares) {
     this.position = position;
     this.value = 0;
-    this.groupNumber = gNum; //the id of the group surrounding this instance
+    this.group = group;
+    this.surroundingSquares = surrSquares;
   }
-}
+};
