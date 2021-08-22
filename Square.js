@@ -1,8 +1,7 @@
 class Square {
-  constructor(position, group, surrSquares) {
+  constructor(position) {
     this.position = position;
     this.value = 0;
-    this.group = group;
-    this.surroundingSquares = surrSquares;
+    this.surroundingSquares = '';
   }
 };
