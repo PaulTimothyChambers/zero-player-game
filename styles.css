@@ -85,7 +85,6 @@ button {
 }
 
 .grid-item {
-  border: 1px solid #193558;
-  height: 20px;
-  width: 30px;
+  height: 14px;
+  width: 22px;
 }

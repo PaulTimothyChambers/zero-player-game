@@ -17,24 +17,29 @@ class GroupsAndSquares {
   testForLivingNeighbors(square) {
     // return console.log(square.surroundingSquares)
     if (this.determineGroupValue(square.surroundingSquares) < 2 || this.determineGroupValue(square.surroundingSquares) > 3) {
-      this.changeActiveValue(square);
+      this.markInactive(square);
     }
   }
 
   testForLivingNeighborsTwo(square) {
     // return console.log(square.surroundingSquares)
-    if (parseInt(this.determineGroupValue(square.surroundingSquares)) === 3 ) {
-      this.changeInactiveValue(square);
+    if (this.determineGroupValue(square.surroundingSquares) === 3 ) {
+      this.markActive(square);
     }
   }
 
-  changeActiveValue(square) {
-    square.position.classList.remove('checked')
-    square.value--;
+  markInactive(square) {
+    square.position.classList.add('marked-for-inactive');
   }
 
-  changeInactiveValue(square) {
-    square.position.classList.add('checked')
-    square.value++;
+  markActive(square) {
+    square.position.classList.add('marked-for-active')
   }
+
+
+
+//   changeInactiveValue(square) {
+//     square.position.classList.add('checked')
+//     square.value++;
+//   }
 };
