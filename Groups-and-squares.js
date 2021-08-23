@@ -15,14 +15,12 @@ class GroupsAndSquares {
   }
 
   testForLivingNeighbors(square) {
-    // return console.log(square.surroundingSquares)
     if (this.determineGroupValue(square.surroundingSquares) < 2 || this.determineGroupValue(square.surroundingSquares) > 3) {
       this.markInactive(square);
     }
   }
 
   testForLivingNeighborsTwo(square) {
-    // return console.log(square.surroundingSquares)
     if (this.determineGroupValue(square.surroundingSquares) === 3 ) {
       this.markActive(square);
     }
@@ -36,10 +34,12 @@ class GroupsAndSquares {
     square.position.classList.add('marked-for-active')
   }
 
+  updateValue(square) {
+    if (square.position.classList.value === userChoice.classList.value && square.value === 0) {
+      square.value++;
 
-
-//   changeInactiveValue(square) {
-//     square.position.classList.add('checked')
-//     square.value++;
-//   }
+    } else if (square.position.classList.value === userChoice.classList.value && square.value === 1) {
+      square.value--;
+    }
+  }
 };

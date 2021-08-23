@@ -10,7 +10,7 @@ var groupsAndSquares = new GroupsAndSquares(s);
 
 makeRows(45, 45);
 createSquares();
-filterSquaresForUndefined()
+filterSquaresForUndefined();
 
 startGame.addEventListener('click', startZeroPlayerGame);
 // stopGame.addEventListener('click', stopZeroPlayerGame);
@@ -27,6 +27,7 @@ function userChangeValue(square) {
   groupsAndSquares.allSquares.forEach((square) => {
     if (square.position.classList.value === userChoice.classList.value && square.value === 0) {
       square.value++;
+
     } else if (square.position.classList.value === userChoice.classList.value && square.value === 1) {
       square.value--;
     }
@@ -34,17 +35,18 @@ function userChangeValue(square) {
 };
 
 function startZeroPlayerGame() {
-  const gameInPlay = setInterval(cycleThroughSquares, 70)
+  const gameInPlay = setInterval(cycleThroughSquares, 60)
 };
 // function stopZeroPlayerGame() {
   //   clearInterval(gameInPlay);
   // };
 
 function cycleThroughSquares() {
-  const refreshBoard = setTimeout(changeActiveValue, 35)
+  const refreshBoard = setTimeout(changeActiveValue, 30)
   for (var i=0;i<s.length;i++) {
     if (s[i].value === 1) {
       groupsAndSquares.testForLivingNeighbors(s[i]);
+
     } else if (s[i].value === 0) {
       groupsAndSquares.testForLivingNeighborsTwo(s[i]);
     }
@@ -57,6 +59,7 @@ function changeActiveValue() {
       square.position.classList.remove('checked')
       square.position.classList.remove('marked-for-inactive')
       square.value--;
+
     } else if (square.position.classList.contains('marked-for-active')) {
       square.position.classList.add('checked')
       square.position.classList.remove('marked-for-active')
@@ -89,9 +92,10 @@ function createSquares() {
     s[i] = new Square(b[i]);
   }
 };
+
 function filterSquaresForUndefined() {
   for (var i=0;i<s.length;i++) {
-    s[i].surroundingSquares = [s[i-46], s[i-45], s[i-44], s[i-1], s[i+1], s[i+46], s[i+45], s[i+44]];
+    s[i].surroundingSquares = [s[i-46], s[i-45], s[i-44], s[i-1], s[i+1], s[i+46], s[i+45], s[i+44], s[i-1979], s[i+1979], s[i-1980], s[i+1980], s[i-1981], s[i+1981], s[i-2024], s[i+2024]];
     p[i] = s[i].surroundingSquares.filter(word => word !== undefined);
     s[i].surroundingSquares = p[i];
   }

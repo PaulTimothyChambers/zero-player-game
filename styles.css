@@ -84,6 +84,11 @@ button {
   grid-template-columns: repeat(var(--grid-cols), 1fr);
 }
 
+/* .grid-item {
+  height: 24px;
+  width: 32px;
+} */
+
 .grid-item {
   height: 14px;
   width: 22px;
